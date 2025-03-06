@@ -82,7 +82,7 @@
         <transition name="fade-scale">
             <div v-if="showError" class="toaster bg-red-500 text-white">
                 <Icon name="heroicons:x-circle" class="w-5 h-5 mr-2 inline" />
-                Error sending message. Please try again.
+                Error sending message. Please try again.!!
             </div>
         </transition>
 
