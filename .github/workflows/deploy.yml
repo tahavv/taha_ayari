@@ -20,6 +20,14 @@ jobs:
           node-version: 18
           cache: 'npm'
 
+      - name: Create .env File
+        run: |
+          echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" >> .env
+          echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> .env
+          echo "SMTP_USER=${{ secrets.SMTP_USER }}" >> .env
+          echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> .env
+          echo "RECEIVER_EMAIL=${{ secrets.RECEIVER_EMAIL }}" >> .env
+
       - name: Install Dependencies
         run: npm install
 
@@ -29,6 +37,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .output/public  # ✅ Corrected path
-          publish_branch: gh-pages  # ✅ Deploys to GitHub Pages
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # ✅ Use Personal Access Token
+          publish_dir: .output/public  # ✅ Correct path
+          publish_branch: gh-pages  # ✅ Deploy to GitHub Pages
