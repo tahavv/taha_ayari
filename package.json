@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "generate:git": "nuxt generate && mv .output/public dist",
-    "deploy": "nuxt generate && gh-pages -d .output/public"
+    "deploy": "nuxt generate && gh-pages -d .output/public",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@nuxt/image": "^1.9.0",

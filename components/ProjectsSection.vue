@@ -25,7 +25,7 @@ const projects = [
         id: 'fraud-management-system',
         title: 'Fraud Management System',
         description: 'A real-time fraud detection system that uses machine learning to identify suspicious transactions.',
-        image: '/taha_ayari/images/projects.png',
+        image: '/images/projects.png',
         technologies: ['Angular', 'Spring Boot', 'Python', 'Docker', 'PostgreSQL', 'Kafka'],
         features: [
             'Real-time transaction monitoring',
@@ -40,7 +40,7 @@ const projects = [
         id: 'telecom-dashboard',
         title: 'Telecom Reporting Dashboard',
         description: 'A comprehensive analytics dashboard for telecom operators to visualize network performance and user metrics.',
-        image: '/taha_ayari/images/projects.png',
+        image: '/images/projects.png',
         technologies: ['Angular', 'TypeScript', 'D3.js', 'Spring Boot', 'PostgreSQL'],
         features: [
             'Interactive data visualizations',
@@ -55,7 +55,7 @@ const projects = [
         id: 'notification-system',
         title: 'Real-time Notification System',
         description: 'A WebSocket and Kafka-based notification system for immediate alerting of critical events.',
-        image: '/taha_ayari/images/projects.png',
+        image: '/images/projects.png',
         technologies: ['Kafka', 'WebSockets', 'Spring Boot', 'Angular', 'Docker'],
         features: [
             'Real-time push notifications',
