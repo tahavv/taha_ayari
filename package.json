@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "generate:git": "nuxt generate && mv .output/public dist",
     "deploy": "nuxt generate && gh-pages -d .output/public"
   },
   "dependencies": {
