@@ -21,8 +21,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
   ],
   app: {
-    baseURL: "/taha_ayari/", // GitHub Pages subpath
-    buildAssetsDir: "./_nuxt/", // Fix for asset paths
+    baseURL: "/taha_ayari/",
     pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Taha Ayari | Full Stack Developer",
@@ -44,11 +43,8 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // Remove the build.publicPath and use this instead
   nitro: {
-    prerender: {
-      crawlLinks: true,
-    },
+    preset: "static", // Ensures Nuxt builds a static site
   },
   googleFonts: {
     families: {
@@ -59,8 +55,8 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: "",
-    preference: "dark",
-    fallback: "light",
+    preference: "dark", // default value of $colorMode.preference
+    fallback: "light", // fallback value if not system preference found
   },
   css: ["~/assets/css/main.css"],
   tailwindcss: {

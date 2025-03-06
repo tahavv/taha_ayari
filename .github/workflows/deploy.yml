@@ -1,40 +1,37 @@
-name: Deploy to GitHub Pages
+name: Deploy Nuxt 3 to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # Runs the workflow when pushing to 'main'
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    environment: production
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build and Generate
-        run: |
-          npm run build
-          npm run generate
-        env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      - name: Generate Static Site
+        run: npm run generate
+
+      - name: Move Files to Correct Directory
+        run: mv .output/public dist  # Move generated site to 'dist'
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          enable_jekyll: false
-          keep_files: false
+          publish_dir: dist
+          publish_branch: gh-pages  # Deploy to the 'gh-pages' branch
