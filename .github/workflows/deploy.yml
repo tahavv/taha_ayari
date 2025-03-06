@@ -3,7 +3,7 @@ name: Deploy Nuxt 3 to GitHub Pages
 on:
   push:
     branches:
-      - main  # Runs the workflow when pushing to 'main'
+      - main  # Runs when pushing to 'main'
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
@@ -26,12 +26,12 @@ jobs:
       - name: Generate Static Site
         run: npm run generate
 
-      - name: Move Files to Correct Directory
-        run: mv .output/public dist  # Move generated site to 'dist'
+      - name: Rename Output Directory
+        run: mv .output dist  # Fixes directory issue
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
-          publish_branch: gh-pages  # Deploy to the 'gh-pages' branch
+          publish_dir: dist/public  # Correct location
+          publish_branch: gh-pages  # Deploy to GitHub Pages branch
