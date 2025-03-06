@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    preset: "node", // Ensures Nuxt builds a static site
+    preset: "node",
   },
   googleFonts: {
     families: {
