@@ -26,12 +26,9 @@ jobs:
       - name: Generate Static Site
         run: npm run generate
 
-      - name: Rename Output Directory
-        run: mv .output dist  # Fixes directory issue
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/public  # Correct location
-          publish_branch: gh-pages  # Deploy to GitHub Pages branch
+          publish_dir: .output/public  # ✅ Corrected path
+          publish_branch: gh-pages  # ✅ Deploys to GitHub Pages
