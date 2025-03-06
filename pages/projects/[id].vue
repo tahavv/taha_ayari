@@ -83,7 +83,7 @@ const projects = [
         id: 'fraud-management-system',
         title: 'Fraud Management System',
         description: 'A real-time fraud detection system that uses machine learning to identify suspicious transactions. The system integrates with payment gateways and banking systems to monitor transactions in real-time, applying various algorithms to detect anomalies and potential fraudulent activities.',
-        image: '/images/projects.png',
+        image: '/taha_ayari/images/projects.png',
         technologies: ['Angular', 'Spring Boot', 'Python', 'Docker', 'PostgreSQL', 'Kafka'],
         features: [
             'Real-time transaction monitoring',
@@ -100,7 +100,7 @@ const projects = [
         id: 'telecom-dashboard',
         title: 'Telecom Reporting Dashboard',
         description: 'A comprehensive analytics dashboard for telecom operators to visualize network performance and user metrics. This tool helps operators identify bottlenecks, optimize network resources, and improve overall service quality through data-driven decisions.',
-        image: '/images/projects.png',
+        image: '/taha_ayari/images/projects.png',
         technologies: ['Spring Boot', 'Angular', 'TypeScript', 'Highcharts', 'PostgreSQL'],
         features: [
             'Interactive data visualizations',
@@ -117,7 +117,7 @@ const projects = [
         id: 'notification-system',
         title: 'Real-time Notification System',
         description: 'A WebSocket and Kafka-based notification system for immediate alerting of critical events. This system ensures that stakeholders are promptly informed of important updates, system alerts, and business events, reducing response times and improving operational efficiency.',
-        image: '/images/projects.png',
+        image: '/taha_ayari/images/projects.png',
         technologies: ['Kafka', 'WebSockets', 'Spring Boot', 'Angular', 'Docker'],
         features: [
             'Real-time push notifications',

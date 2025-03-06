@@ -2,7 +2,7 @@
     <div
         class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group">
         <div class="aspect-w-16 aspect-h-9 relative">
-            <img :src="project.image || '/images/project.png'" :alt="project.title"
+            <img :src="project.image || '/taha_ayari/images/project.png'" :alt="project.title"
                 class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-105" />
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end">
